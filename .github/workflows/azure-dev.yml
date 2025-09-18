@@ -39,9 +39,10 @@ jobs:
           curl -fsSL https://github.com/Azure/azure-dev/releases/latest/download/azd-linux-amd64.tar.gz -o azd.tar.gz
           mkdir azd-extract
           tar -xvzf azd.tar.gz -C azd-extract
-          sudo mv azd-extract/azd /usr/local/bin/
+          sudo mv azd-extract/azd-linux-amd64 /usr/local/bin/azd
+          chmod +x /usr/local/bin/azd
           azd version
-          
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
